@@ -15,7 +15,7 @@
   networking.hostName = "HP";
   networking.networkmanager.enable = true;
   zramSwap.enable = true;
-  time.timeZone = "Asia/Amman";
+  time.timeZone = "Asia/Riyadh";
   i18n.defaultLocale = "en_US.UTF-8";
 
   users.users.Mohannad.isNormalUser = true;
@@ -76,7 +76,6 @@
     mesa-demos
 
     picom
-    nitrogen
     obconf
     tint2
     rofi
@@ -98,13 +97,19 @@
 
     brave-origin
     # helium
+    quickshell
+    zed-editor
+    qt6.qtdeclarative
+
+    feh
+    wmctrl
+    xdotool
   ];
 
   # Startup for the X11 session. Hyprland startup is configured separately.
   services.xserver.displayManager.sessionCommands = ''
     ${pkgs.tint2}/bin/tint2 &
     ${pkgs.picom}/bin/picom &
-    ${pkgs.nitrogen}/bin/nitrogen --restore &
     ${pkgs.networkmanagerapplet}/bin/nm-applet &
     ${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1 &
     ${pkgs.dunst}/bin/dunst &
